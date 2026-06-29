@@ -1,0 +1,79 @@
+@use './variables.scss';
+
+.header {
+  box-sizing: border-box;
+  padding: 20px 32px 40px;
+  background-image: url(/images/backgroundimage.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__title {
+    color: variables.$color;
+    font-family: cinzel, serif;
+    font-size: 80px;
+    font-weight: variables.$font-weight;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 60px;
+    align-self: center;
+  }
+
+  &_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__phone-wrapper {
+    position: relative;
+  }
+
+  &__contacts {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: calc(100% + 16px); /* appears to the left of the phone icon */
+    flex-direction: row;
+    gap: 32px;
+    white-space: nowrap;
+  }
+
+  &__phone-wrapper:hover &__contacts,
+  &__phone-wrapper:focus-within &__contacts {
+    display: flex;
+  }
+
+  &__contact {
+    text-decoration: none;
+    color: variables.$color;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__contact-title {
+    font-size: 12px;
+    font-weight: variables.$font-weight;
+    letter-spacing: 1px;
+    margin: 0 0 4px;
+  }
+
+  &__contact:hover &__contact-title {
+    text-decoration: underline;
+  }
+
+  &__contact-phone {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
+}

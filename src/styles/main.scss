@@ -1,3 +1,24 @@
+@use './header.scss';
+@use './icon.scss';
+@use './menu.scss';
+@use './variables.scss';
+@use './recommended.scss';
+@use './categories.scss';
+@use './exploration.scss';
+@use './footer.scss';
+@use './contact.scss';
+
 body {
   margin: 0;
+  font-family: Cinzel, serif;
+}
+
+.logo {
+  margin: 0;
+  color: variables.$color;
+  font-weight: variables.$font-weight;
+  font-size: 56px;
+  font-family: cinzel, serif;
+  text-transform: uppercase;
+  line-height: 0.9;
 }

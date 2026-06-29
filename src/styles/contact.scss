@@ -1,0 +1,121 @@
+.contact {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 20px 110px;
+  color: #161616;
+
+  &__name {
+    margin: 0 0 56px;
+    text-align: center;
+    font-family: cinzel, serif;
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 436px;
+    gap: 84px;
+    align-items: start;
+  }
+
+  &__locations {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+  }
+
+  &__location {
+    min-width: 0;
+  }
+
+  &__subtitle {
+    margin: 0 0 18px;
+    font-family: cinzel, serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  &__label {
+    margin: 0 0 6px;
+    font-family: cinzel, serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #666;
+  }
+
+  &__value {
+    margin: 0 0 16px;
+    font-family: cinzel, serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    border: none;
+    background: #f8f8fa;
+    color: #161616;
+    font-family: cinzel, serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 16px 18px;
+    box-sizing: border-box;
+  }
+
+  &__input {
+    height: 56px;
+  }
+
+  &__textarea {
+    min-height: 144px;
+    resize: vertical;
+  }
+
+  &__button {
+    margin-top: 18px;
+    height: 56px;
+    border: none;
+    background: #ae1c28;
+    color: #fff;
+    font-family: cinzel, serif;
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    &__name {
+      font-size: 40px;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &__locations {
+      grid-template-columns: 1fr;
+    }
+
+    &__subtitle {
+      font-size: 21px;
+    }
+
+    &__button {
+      font-size: 28px;
+    }
+  }
+}

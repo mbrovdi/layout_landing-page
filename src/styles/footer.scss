@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  height: clamp(260px, 36vw, 390px);
+  margin-top: 64px;
+  overflow: hidden;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 38%;
+  }
+}
