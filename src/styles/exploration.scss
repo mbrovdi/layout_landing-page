@@ -1,20 +1,20 @@
 .exploration {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 44px 20px 100px;
+  padding: 76px 20px 96px;
 
   &__name {
-    margin: 0 0 46px;
+    margin: 0 auto 54px;
+    max-width: 460px;
     text-align: center;
     font-size: 48px;
     font-weight: 700;
     font-family: cinzel, serif;
-    text-transform: uppercase;
     color: #161616;
-    line-height: 0.9;
+    line-height: 0.95;
   }
 
   &__list {
+    max-width: 1080px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
@@ -35,29 +35,29 @@
   }
 
   &__subtitle {
-    margin: 28px 0 10px;
+    margin: 26px 0 16px;
     color: #d12d35;
-    font-size: 42px;
+    font-size: 24px;
     font-weight: 700;
     font-family: cinzel, serif;
-    text-transform: uppercase;
-    line-height: 1;
+    line-height: 1.1;
   }
 
   &__description {
     margin: 0;
     color: #161616;
-    font-size: 32px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.65;
   }
 
   @media (max-width: 900px) {
-    padding: 20px 20px 72px;
+    padding: 56px 20px 72px;
 
     &__name {
       font-size: 40px;
-      margin-bottom: 36px;
+      margin-bottom: 40px;
     }
 
     &__list {
@@ -71,29 +71,29 @@
     }
 
     &__subtitle {
-      font-size: 34px;
+      font-size: 24px;
     }
 
     &__description {
-      font-size: 26px;
+      font-size: 17px;
     }
   }
 
   @media (max-width: 600px) {
-    padding: 20px 16px 64px;
+    padding: 48px 16px 64px;
 
     &__name {
       font-size: 32px;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
 
     &__subtitle {
-      margin-top: 20px;
-      font-size: 26px;
+      margin-top: 18px;
+      font-size: 22px;
     }
 
     &__description {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 }

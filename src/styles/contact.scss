@@ -55,6 +55,18 @@
     line-height: 1.25;
   }
 
+  &__link {
+    display: inline-block;
+    color: #161616;
+    text-decoration: none;
+  }
+
+  &__link:hover,
+  &__link:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
@@ -90,7 +102,7 @@
     background: #ae1c28;
     color: #fff;
     font-family: cinzel, serif;
-    font-size: 34px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
@@ -116,6 +128,27 @@
 
     &__button {
       font-size: 28px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__name {
+      margin-bottom: 36px;
+      font-size: 34px;
+    }
+
+    &__subtitle {
+      line-height: 1.15;
+      font-size: 18px;
+    }
+
+    &__value {
+      font-size: 16px;
+      overflow-wrap: anywhere;
+    }
+
+    &__button {
+      font-size: 20px;
     }
   }
 }

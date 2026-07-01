@@ -41,7 +41,9 @@
   gap: 32px;
   white-space: nowrap;
 }
-.header__phone-wrapper:hover .header__contacts, .header__phone-wrapper:focus-within .header__contacts {
+.header__phone-wrapper:hover .header__contacts,
+.header__phone-wrapper:focus-within .header__contacts,
+.header__phone-wrapper.is-open .header__contacts {
   display: flex;
 }
 .header__contact {
@@ -64,6 +66,35 @@
   font-size: 12px;
   letter-spacing: 0.2px;
 }
+@media (max-width: 900px) {
+  .header {
+    padding: 20px 20px 32px;
+  }
+  .header__title {
+    font-size: 56px;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    padding: 16px;
+  }
+  .header__title {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+  .header__icons {
+    gap: 12px;
+  }
+  .header__contacts {
+    display: none;
+    top: 36px;
+    right: -10px;
+    flex-direction: column;
+    gap: 18px;
+    text-align: right;
+  }
+}
 
 .icon {
   display: block;
@@ -83,6 +114,18 @@
 .icon--phone {
   background-image: url(/images/Icon-Phone-call.png);
 }
+@media (max-width: 900px) {
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+@media (max-width: 600px) {
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+}
 
 .menu {
   position: fixed;
@@ -97,7 +140,9 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
   overflow-y: auto;
 }
 .menu.is-open {
@@ -134,7 +179,8 @@
   font-weight: 700;
   letter-spacing: 2px;
 }
-.menu__link:hover, .menu__link:focus-visible {
+.menu__link:hover,
+.menu__link:focus-visible {
   text-decoration: underline;
   text-underline-offset: 8px;
 }
@@ -153,7 +199,9 @@
   text-decoration: none;
   text-transform: uppercase;
 }
-.menu__contact-title, .menu__contact-phone, .menu__call {
+.menu__contact-title,
+.menu__contact-phone,
+.menu__call {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.6px;
@@ -181,7 +229,9 @@
   .menu__link {
     font-size: 18px;
   }
-  .menu__contact-title, .menu__contact-phone, .menu__call {
+  .menu__contact-title,
+  .menu__contact-phone,
+  .menu__call {
     font-size: 14px;
   }
 }
@@ -282,7 +332,7 @@
   margin: 12px 0 0;
   text-align: center;
   color: #161616;
-  font-size: 32px;
+  font-size: 16px;
   font-weight: 400;
   font-family: cinzel, serif;
   text-transform: uppercase;
@@ -298,9 +348,8 @@
 .categories__list--featured {
   display: grid;
   grid-template-columns: minmax(0, 2.05fr) minmax(0, 0.95fr);
-  grid-template-areas: "left right" "text text";
+  grid-template-areas: 'left right' 'text text';
   gap: 16px 24px;
-  border: 3px solid #1b96e5;
   background-color: #fff;
   margin-bottom: 56px;
   overflow: hidden;
@@ -354,13 +403,14 @@
     font-size: 40px;
   }
   .categories__intro {
-    font-size: 24px;
+    font-size: 16px;
   }
   .categories__list--featured {
     grid-template-columns: 1fr;
-    grid-template-areas: "left" "right" "text";
+    grid-template-areas: 'left' 'right' 'text';
   }
-  .categories__content, .categories__content2 {
+  .categories__content,
+  .categories__content2 {
     min-height: 260px;
   }
 }
@@ -372,16 +422,17 @@
     font-size: 32px;
   }
   .categories__intro {
-    font-size: 18px;
+    font-size: 16px;
   }
-  .categories__subtitle, .categories__description {
+  .categories__subtitle,
+  .categories__description {
     font-size: 14px;
   }
 }
 .categories__list--featured2 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-areas: "left middle right" "text text text";
+  grid-template-areas: 'left middle right' 'text text text';
   gap: 16px 24px;
   background-color: #fff;
   margin-bottom: 56px;
@@ -419,13 +470,13 @@
 @media (max-width: 600px) {
   .categories__list--featured2 {
     grid-template-columns: 1fr;
-    grid-template-areas: "left" "middle" "right" "text";
+    grid-template-areas: 'left' 'middle' 'right' 'text';
   }
 }
 .categories__list--featured3 {
   display: grid;
   grid-template-columns: 324px 672px;
-  grid-template-areas: "left right" "text text";
+  grid-template-areas: 'left right' 'text text';
   gap: 16px 24px;
   background-color: #fff;
   max-width: 1020px;
@@ -482,26 +533,36 @@
 @media (max-width: 600px) {
   .categories__list--featured3 {
     grid-template-columns: 1fr;
-    grid-template-areas: "left" "right" "text";
+    grid-template-areas: 'left' 'right' 'text';
+  }
+}
+@media (max-width: 900px) {
+  .categories__list--featured3 {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'left' 'right' 'text';
+    max-width: 100%;
+  }
+  .categories__button {
+    width: min(324px, 100%);
   }
 }
 
 .exploration {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 44px 20px 100px;
+  padding: 76px 20px 96px;
 }
 .exploration__name {
-  margin: 0 0 46px;
+  margin: 0 auto 54px;
+  max-width: 460px;
   text-align: center;
   font-size: 48px;
   font-weight: 700;
   font-family: cinzel, serif;
-  text-transform: uppercase;
   color: #161616;
-  line-height: 0.9;
+  line-height: 0.95;
 }
 .exploration__list {
+  max-width: 1080px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
@@ -519,28 +580,28 @@
   display: block;
 }
 .exploration__subtitle {
-  margin: 28px 0 10px;
+  margin: 26px 0 16px;
   color: #d12d35;
-  font-size: 42px;
+  font-size: 24px;
   font-weight: 700;
   font-family: cinzel, serif;
-  text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.1;
 }
 .exploration__description {
   margin: 0;
   color: #161616;
-  font-size: 32px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.65;
 }
 @media (max-width: 900px) {
   .exploration {
-    padding: 20px 20px 72px;
+    padding: 56px 20px 72px;
   }
   .exploration__name {
     font-size: 40px;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
   }
   .exploration__list {
     grid-template-columns: 1fr;
@@ -551,26 +612,26 @@
     margin: 0 auto;
   }
   .exploration__subtitle {
-    font-size: 34px;
+    font-size: 24px;
   }
   .exploration__description {
-    font-size: 26px;
+    font-size: 17px;
   }
 }
 @media (max-width: 600px) {
   .exploration {
-    padding: 20px 16px 64px;
+    padding: 48px 16px 64px;
   }
   .exploration__name {
     font-size: 32px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
   .exploration__subtitle {
-    margin-top: 20px;
-    font-size: 26px;
+    margin-top: 18px;
+    font-size: 22px;
   }
   .exploration__description {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
@@ -642,12 +703,23 @@
   font-weight: 700;
   line-height: 1.25;
 }
+.contact__link {
+  display: inline-block;
+  color: #161616;
+  text-decoration: none;
+}
+.contact__link:hover,
+.contact__link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .contact__form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.contact__input, .contact__textarea {
+.contact__input,
+.contact__textarea {
   width: 100%;
   border: none;
   background: #f8f8fa;
@@ -672,7 +744,7 @@
   background: #ae1c28;
   color: #fff;
   font-family: cinzel, serif;
-  font-size: 34px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
@@ -692,23 +764,54 @@
     font-size: 21px;
   }
   .contact__button {
-    font-size: 28px;
+    font-size: 16px;
   }
+}
+@media (max-width: 600px) {
+  .contact__name {
+    margin-bottom: 36px;
+    font-size: 16px;
+  }
+  .contact__subtitle {
+    line-height: 1.15;
+    font-size: 16px;
+  }
+  .contact__value {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+  }
+  .contact__button {
+    font-size: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Cinzel", serif;
+  font-family: Cinzel, serif;
 }
 
 .logo {
   margin: 0;
   color: #fff;
   font-weight: 700;
-  font-size: 56px;
+  font-size: 40px;
   font-family: cinzel, serif;
   text-transform: uppercase;
   line-height: 0.9;
+}
+@media (max-width: 900px) {
+  .logo {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .logo {
+    font-size: 40px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

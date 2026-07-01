@@ -23,7 +23,7 @@
     margin: 12px 0 0;
     text-align: center;
     color: #161616;
-    font-size: 32px;
+    font-size: 16px;
     font-weight: 400;
     font-family: cinzel, serif;
     text-transform: uppercase;
@@ -45,7 +45,6 @@
       'left right'
       'text text';
     gap: 16px 24px;
-    border: 3px solid #1b96e5;
     background-color: #fff;
     margin-bottom: 56px;
     overflow: hidden;
@@ -108,7 +107,7 @@
     }
 
     &__intro {
-      font-size: 24px;
+      font-size: 16px;
     }
 
     &__list--featured {
@@ -133,7 +132,7 @@
     }
 
     &__intro {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     &__subtitle,
@@ -273,6 +272,21 @@
         'left'
         'right'
         'text';
+    }
+  }
+
+  @media (max-width: 900px) {
+    &__list--featured3 {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'left'
+        'right'
+        'text';
+      max-width: 100%;
+    }
+
+    &__button {
+      width: min(324px, 100%);
     }
   }
 }
