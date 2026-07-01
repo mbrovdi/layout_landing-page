@@ -21,6 +21,11 @@
     />
     <title>Landing Page</title>
     <link
+      rel="icon"
+      type="image/svg+xml"
+      href="images/favicon.svg"
+    />
+    <link
       rel="stylesheet"
       href="src/styles/main.css"
     />
@@ -40,8 +45,10 @@
               href="#"
               class="icon icon--phone"
               aria-label="Call contacts"
+              aria-expanded="false"
+              aria-controls="header-contacts"
             ></a>
-            <div class="header__contacts">
+            <div class="header__contacts" id="header-contacts">
               <a href="tel:+12125357710" class="header__contact">
                 <p class="header__contact-title">The Met Fifth Avenue</p>
                 <p class="header__contact-phone">+1 212-535-7710</p>
@@ -250,7 +257,7 @@
 
 
       <section class="exploration" id="explore-online">
-        <h2 class="exploration__name">More to Explore <br> Online</h2>
+        <h2 class="exploration__name">More to Explore <br>Online</h2>
 
         <div class="exploration__list">
           <article class="exploration__item">
@@ -294,20 +301,34 @@
               <h3 class="contact__subtitle">The Met Fifth Avenue</h3>
 
               <p class="contact__label">Phone</p>
-              <p class="contact__value">+1 212-535-7710</p>
+              <a class="contact__value contact__link" href="tel:+12125357710">+1 212-535-7710</a>
 
               <p class="contact__label">Address</p>
-              <p class="contact__value">1000 Fifth Avenue<br>New York, NY 10028</p>
+              <a
+                class="contact__value contact__link"
+                href="https://maps.google.com/?q=1000+Fifth+Avenue+New+York+NY+10028"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                1000 Fifth Avenue<br>New York, NY 10028
+              </a>
             </article>
 
             <article class="contact__location">
               <h3 class="contact__subtitle">The Met Cloisters</h3>
 
               <p class="contact__label">Phone</p>
-              <p class="contact__value">+1 212-923-3700</p>
+              <a class="contact__value contact__link" href="tel:+12129233700">+1 212-923-3700</a>
 
               <p class="contact__label">Address</p>
-              <p class="contact__value">99 Margaret Corbin Drive<br>Fort Tryon Park<br>New York, NY 10040</p>
+              <a
+                class="contact__value contact__link"
+                href="https://maps.google.com/?q=99+Margaret+Corbin+Drive+Fort+Tryon+Park+New+York+NY+10040"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                99 Margaret Corbin Drive<br>Fort Tryon Park<br>New York, NY 10040
+              </a>
             </article>
           </div>
 
@@ -316,16 +337,21 @@
               class="contact__input"
               type="text"
               name="name"
-              placeholder="Name" />
+              placeholder="Name"
+              required
+              minlength="2" />
             <input
               class="contact__input"
               type="email"
               name="email"
-              placeholder="Email" />
+              placeholder="Email"
+              required />
             <textarea
               class="contact__textarea"
               name="message"
-              placeholder="Message"></textarea>
+              placeholder="Message"
+              required
+              minlength="10"></textarea>
 
             <button class="contact__button" type="submit">Send</button>
           </form>
