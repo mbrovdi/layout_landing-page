@@ -7,6 +7,7 @@ const menuLinks = document.querySelectorAll('.menu__link');
 const contactForm = document.querySelector('.contact__form');
 const phoneWrapper = document.querySelector('.header__phone-wrapper');
 const phoneButton = document.querySelector('.icon--phone');
+const contactTextarea = document.querySelector('.contact__textarea');
 
 if (phoneWrapper && phoneButton) {
   const closePhoneContacts = () => {
@@ -70,4 +71,14 @@ if (contactForm) {
 
     contactForm.reset();
   });
+}
+
+if (contactTextarea) {
+  const resizeTextarea = () => {
+    contactTextarea.style.height = 'auto';
+    contactTextarea.style.height = `${contactTextarea.scrollHeight}px`;
+  };
+
+  contactTextarea.addEventListener('input', resizeTextarea);
+  resizeTextarea();
 }

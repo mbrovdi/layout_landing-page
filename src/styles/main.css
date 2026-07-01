@@ -33,18 +33,29 @@
   position: relative;
 }
 .header__contacts {
-  display: none;
+  display: flex;
   position: absolute;
-  top: 0;
-  right: calc(100% + 16px); /* appears to the left of the phone icon */
-  flex-direction: row;
-  gap: 32px;
+  top: 50%;
+  right: calc(100% + 18px);
+  transform: translateY(-50%);
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
   white-space: nowrap;
+  text-align: right;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
 }
 .header__phone-wrapper:hover .header__contacts,
 .header__phone-wrapper:focus-within .header__contacts,
 .header__phone-wrapper.is-open .header__contacts {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .header__contact {
   text-decoration: none;
@@ -87,10 +98,9 @@
     gap: 12px;
   }
   .header__contacts {
-    display: none;
     top: 36px;
-    right: -10px;
-    flex-direction: column;
+    right: calc(100% + 12px);
+    transform: none;
     gap: 18px;
     text-align: right;
   }
@@ -356,7 +366,7 @@
 }
 .categories__content {
   grid-area: left;
-  min-height: 360px;
+  aspect-ratio: 2.2/1;
 }
 .categories__image {
   width: 100%;
@@ -366,7 +376,7 @@
 }
 .categories__content2 {
   grid-area: right;
-  min-height: 360px;
+  aspect-ratio: 1/1;
 }
 .categories__image2 {
   width: 100%;
@@ -405,13 +415,9 @@
   .categories__intro {
     font-size: 16px;
   }
-  .categories__list--featured {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'left' 'right' 'text';
-  }
-  .categories__content,
-  .categories__content2 {
-    min-height: 260px;
+  .categories__list--featured3 {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 2.05fr);
+    max-width: 100%;
   }
 }
 @media (max-width: 600px) {
@@ -428,6 +434,17 @@
   .categories__description {
     font-size: 14px;
   }
+  .categories__list--featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 'left right' 'text text';
+    gap: 8px;
+  }
+  .categories__content,
+  .categories__content2,
+  .categories__content6,
+  .categories__content7 {
+    aspect-ratio: 1/1;
+  }
 }
 .categories__list--featured2 {
   display: grid;
@@ -439,7 +456,7 @@
 }
 .categories__content3 {
   grid-area: left;
-  min-height: 320px;
+  aspect-ratio: 1/1;
 }
 .categories__image3 {
   width: 100%;
@@ -449,7 +466,7 @@
 }
 .categories__content4 {
   grid-area: middle;
-  min-height: 320px;
+  aspect-ratio: 1/1;
 }
 .categories__image4 {
   width: 100%;
@@ -459,7 +476,7 @@
 }
 .categories__content5 {
   grid-area: right;
-  min-height: 320px;
+  aspect-ratio: 1/1;
 }
 .categories__image5 {
   width: 100%;
@@ -467,15 +484,29 @@
   display: block;
   object-fit: cover;
 }
+@media (max-width: 900px) {
+  .categories__list--featured2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 'left middle' 'text text';
+  }
+  .categories__content5 {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .categories__list--featured2 {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'left' 'middle' 'right' 'text';
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas: 'left middle right' 'text text text';
+    gap: 8px;
+  }
+  .categories__content5 {
+    display: block;
   }
 }
 .categories__list--featured3 {
   display: grid;
-  grid-template-columns: 324px 672px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 2.05fr);
   grid-template-areas: 'left right' 'text text';
   gap: 16px 24px;
   background-color: #fff;
@@ -484,7 +515,7 @@
 }
 .categories__content6 {
   grid-area: left;
-  height: 320px;
+  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -498,7 +529,7 @@
 }
 .categories__content7 {
   grid-area: right;
-  height: 320px;
+  aspect-ratio: 2.2/1;
 }
 .categories__image7 {
   width: 100%;
@@ -532,16 +563,12 @@
 }
 @media (max-width: 600px) {
   .categories__list--featured3 {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'left' 'right' 'text';
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 'left right' 'text text';
+    gap: 8px;
   }
 }
 @media (max-width: 900px) {
-  .categories__list--featured3 {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'left' 'right' 'text';
-    max-width: 100%;
-  }
   .categories__button {
     width: min(324px, 100%);
   }
@@ -575,7 +602,7 @@
 }
 .exploration__image {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 324/320;
   object-fit: cover;
   display: block;
 }
@@ -637,7 +664,7 @@
 
 .footer {
   width: 100%;
-  height: clamp(260px, 36vw, 390px);
+  height: 390px;
   margin-top: 64px;
   overflow: hidden;
 }
@@ -651,6 +678,20 @@
   display: block;
   object-fit: cover;
   object-position: center 38%;
+}
+@media (max-width: 900px) {
+  .footer {
+    height: 300px;
+  }
+}
+@media (max-width: 600px) {
+  .footer {
+    height: 180px;
+    margin-top: 48px;
+  }
+  .footer__image {
+    object-position: center 35%;
+  }
 }
 
 .contact {
@@ -722,6 +763,7 @@
 .contact__textarea {
   width: 100%;
   border: none;
+  outline: none;
   background: #f8f8fa;
   color: #161616;
   font-family: cinzel, serif;
@@ -730,12 +772,24 @@
   padding: 16px 18px;
   box-sizing: border-box;
 }
+.contact__input:-webkit-autofill,
+.contact__input:-webkit-autofill:hover,
+.contact__input:-webkit-autofill:focus,
+.contact__textarea:-webkit-autofill,
+.contact__textarea:-webkit-autofill:hover,
+.contact__textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #161616;
+  box-shadow: 0 0 0 1000px #f8f8fa inset;
+  transition: background-color 9999s ease-out 0s;
+  caret-color: #161616;
+}
 .contact__input {
   height: 56px;
 }
 .contact__textarea {
   min-height: 144px;
-  resize: vertical;
+  overflow: hidden;
+  resize: none;
 }
 .contact__button {
   margin-top: 18px;
@@ -792,6 +846,32 @@
 body {
   margin: 0;
   font-family: Cinzel, serif;
+}
+
+img,
+.icon,
+button,
+a {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+@media (hover: hover) {
+  img:hover {
+    transform: scale(1.03);
+  }
+  .icon:hover,
+  button:hover {
+    transform: translateY(-1px) scale(1.06);
+  }
+  a:hover {
+    opacity: 0.85;
+  }
 }
 
 .logo {

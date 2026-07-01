@@ -77,6 +77,7 @@
   &__textarea {
     width: 100%;
     border: none;
+    outline: none;
     background: #f8f8fa;
     color: #161616;
     font-family: cinzel, serif;
@@ -86,13 +87,26 @@
     box-sizing: border-box;
   }
 
+  &__input:-webkit-autofill,
+  &__input:-webkit-autofill:hover,
+  &__input:-webkit-autofill:focus,
+  &__textarea:-webkit-autofill,
+  &__textarea:-webkit-autofill:hover,
+  &__textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #161616;
+    box-shadow: 0 0 0 1000px #f8f8fa inset;
+    transition: background-color 9999s ease-out 0s;
+    caret-color: #161616;
+  }
+
   &__input {
     height: 56px;
   }
 
   &__textarea {
     min-height: 144px;
-    resize: vertical;
+    overflow: hidden;
+    resize: none;
   }
 
   &__button {
@@ -127,7 +141,7 @@
     }
 
     &__button {
-      font-size: 28px;
+      font-size: 16px;
     }
   }
 
@@ -148,7 +162,7 @@
     }
 
     &__button {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 }

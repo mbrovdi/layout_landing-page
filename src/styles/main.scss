@@ -17,6 +17,34 @@ body {
   font-family: Cinzel, serif;
 }
 
+img,
+.icon,
+button,
+a {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+@media (hover: hover) {
+  img:hover {
+    transform: scale(1.03);
+  }
+
+  .icon:hover,
+  button:hover {
+    transform: translateY(-1px) scale(1.06);
+  }
+
+  a:hover {
+    opacity: 0.85;
+  }
+}
+
 .logo {
   margin: 0;
   color: variables.$color;
