@@ -87,6 +87,16 @@
     box-sizing: border-box;
   }
 
+  &__input {
+    height: 56px;
+  }
+
+  &__textarea {
+    min-height: 144px;
+    overflow: hidden;
+    resize: none;
+  }
+
   &__input:-webkit-autofill,
   &__input:-webkit-autofill:hover,
   &__input:-webkit-autofill:focus,
@@ -97,16 +107,6 @@
     box-shadow: 0 0 0 1000px #f8f8fa inset;
     transition: background-color 9999s ease-out 0s;
     caret-color: #161616;
-  }
-
-  &__input {
-    height: 56px;
-  }
-
-  &__textarea {
-    min-height: 144px;
-    overflow: hidden;
-    resize: none;
   }
 
   &__button {
