@@ -35,6 +35,10 @@ a {
     transform: scale(1.03);
   }
 
+  .footer__image:hover {
+    transform: none;
+  }
+
   .icon:hover,
   button:hover {
     transform: translateY(-1px) scale(1.06);
