@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
-  padding: 24px 32px 48px;
+  padding: 24px 120px 48px;
   background-color: #d12d35;
   color: variables.$color;
   opacity: 0;
@@ -102,6 +102,12 @@
 
 .body--menu-open {
   overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    padding-inline: 48px;
+  }
 }
 
 @media (max-width: 600px) {
